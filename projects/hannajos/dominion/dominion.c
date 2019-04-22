@@ -738,7 +738,8 @@ int* kingdomCards(int k1, int k2, int k3, int k4, int k5, int k6, int k7,
       //discard trashed card
       for (int i = 0; i < state->handCount[currentPlayer]; i++)
       {
-        if (state->hand[currentPlayer][i] == j)
+        //ADDED BUG: changed j to j-1
+        if (state->hand[currentPlayer][i] == j-1)
         {
           //changed the discard from a 0 to a 1.
           discardCard(i, currentPlayer, state, 1);
