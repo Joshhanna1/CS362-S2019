@@ -1,0 +1,299 @@
+unittest1
+TEST FAILED: Values do not match. Expected value: 0  whoseTurn function return value: 1
+TEST PASSED: Values matched. Expected value: 1   whoseTurn function return value: 1
+TEST FAILED: Values do not match. Expected value: 2  whoseTurn function return value: 1
+TEST FAILED: Values do not match. Expected value: 3  whoseTurn function return value: 1
+Function 'main'
+Lines executed:100.00% of 14
+Branches executed:100.00% of 4
+Taken at least once:100.00% of 4
+No calls
+
+File 'unittest1.c'
+Lines executed:100.00% of 14
+Branches executed:100.00% of 4
+Taken at least once:100.00% of 4
+No calls
+unittest1.c:creating 'unittest1.c.gcov'
+
+
+unittest1
+TEST FAILED: Values do not match.Expected value: 2   numHandCards function return value: 3
+Function 'main'
+Lines executed:81.82% of 11
+Branches executed:100.00% of 2
+Taken at least once:50.00% of 2
+No calls
+
+File 'unittest2.c'
+Lines executed:81.82% of 11
+Branches executed:100.00% of 2
+Taken at least once:50.00% of 2
+No calls
+unittest2.c:creating 'unittest2.c.gcov'
+
+
+unittest3
+TEST Failed: Values do not matched.Expected value: -492201760   numHandCards function return value: -1478492128
+TEST Failed: Values do not matched.Expected value: -492201760   numHandCards function return value: -1478492128
+TEST Failed: Values do not matched.Expected value: -492201760   numHandCards function return value: -1478492128
+TEST Failed: Values do not matched.Expected value: -492201760   numHandCards function return value: -1478492128
+TEST Failed: Values do not matched.Expected value: -492201760   numHandCards function return value: -1478492128
+TEST Failed: Values do not matched.Expected value: -492201760   numHandCards function return value: -1478492128
+TEST Failed: Values do not matched.Expected value: -492201760   numHandCards function return value: -1478492128
+TEST Failed: Values do not matched.Expected value: -492201760   numHandCards function return value: -1478492128
+TEST Failed: Values do not matched.Expected value: -492201760   numHandCards function return value: -1478492128
+TEST Failed: Values do not matched.Expected value: -492201760   numHandCards function return value: -1478492128
+Function 'main'
+Lines executed:100.00% of 8
+Branches executed:100.00% of 4
+Taken at least once:75.00% of 4
+No calls
+
+File 'unittest3.c'
+Lines executed:100.00% of 8
+Branches executed:100.00% of 4
+Taken at least once:75.00% of 4
+No calls
+unittest3.c:creating 'unittest3.c.gcov'
+
+
+unittest4
+TEST Failed: Values do not matched. Expected value: 6   updateCoins function return total: 3
+TEST Failed: Values do not matched. Expected value: 9   updateCoins function return total: 3
+Function 'main'
+Lines executed:86.67% of 30
+Branches executed:100.00% of 8
+Taken at least once:75.00% of 8
+No calls
+
+File 'unittest4.c'
+Lines executed:86.67% of 30
+Branches executed:100.00% of 8
+Taken at least once:75.00% of 8
+No calls
+unittest4.c:creating 'unittest4.c.gcov'
+
+
+cardtest1
+Function 'main'
+Lines executed:100.00% of 1
+No branches
+No calls
+
+File 'cardtest1.c'
+Lines executed:100.00% of 1
+No branches
+No calls
+cardtest1.c:creating 'cardtest1.c.gcov'
+
+
+cardtest2
+Function 'main'
+Lines executed:100.00% of 1
+No branches
+No calls
+
+File 'cardtest2.c'
+Lines executed:100.00% of 1
+No branches
+No calls
+cardtest2.c:creating 'cardtest2.c.gcov'
+
+
+cardtest3
+Function 'main'
+Lines executed:100.00% of 1
+No branches
+No calls
+
+File 'cardtest3.c'
+Lines executed:100.00% of 1
+No branches
+No calls
+cardtest3.c:creating 'cardtest3.c.gcov'
+
+
+cardtest4
+Function 'main'
+Lines executed:100.00% of 1
+No branches
+No calls
+
+File 'cardtest4.c'
+Lines executed:100.00% of 1
+No branches
+No calls
+cardtest4.c:creating 'cardtest4.c.gcov'
+
+
+dominion
+Function 'compare'
+Lines executed:0.00% of 6
+Branches executed:0.00% of 4
+Taken at least once:0.00% of 4
+No calls
+
+Function 'newGame'
+Lines executed:0.00% of 2
+No branches
+No calls
+
+Function 'kingdomCards'
+Lines executed:100.00% of 12
+No branches
+No calls
+
+Function 'initializeGame'
+Lines executed:0.00% of 78
+Branches executed:0.00% of 46
+Taken at least once:0.00% of 46
+No calls
+
+Function 'shuffle'
+Lines executed:0.00% of 18
+Branches executed:0.00% of 8
+Taken at least once:0.00% of 8
+No calls
+
+Function 'playCard'
+Lines executed:0.00% of 14
+Branches executed:0.00% of 10
+Taken at least once:0.00% of 10
+No calls
+
+Function 'buyCard'
+Lines executed:0.00% of 13
+Branches executed:0.00% of 6
+Taken at least once:0.00% of 6
+No calls
+
+Function 'numHandCards'
+Lines executed:100.00% of 1
+No branches
+No calls
+
+Function 'handCard'
+Lines executed:0.00% of 2
+No branches
+No calls
+
+Function 'supplyCount'
+Lines executed:0.00% of 1
+No branches
+No calls
+
+Function 'fullDeckCount'
+Lines executed:0.00% of 11
+Branches executed:0.00% of 12
+Taken at least once:0.00% of 12
+No calls
+
+Function 'whoseTurn'
+Lines executed:100.00% of 1
+No branches
+No calls
+
+Function 'endTurn'
+Lines executed:0.00% of 22
+Branches executed:0.00% of 6
+Taken at least once:0.00% of 6
+No calls
+
+Function 'isGameOver'
+Lines executed:0.00% of 12
+Branches executed:0.00% of 8
+Taken at least once:0.00% of 8
+No calls
+
+Function 'scoreFor'
+Lines executed:0.00% of 26
+Branches executed:0.00% of 42
+Taken at least once:0.00% of 42
+No calls
+
+Function 'getWinners'
+Lines executed:0.00% of 33
+Branches executed:0.00% of 22
+Taken at least once:0.00% of 22
+No calls
+
+Function 'drawCard'
+Lines executed:0.00% of 24
+Branches executed:0.00% of 6
+Taken at least once:0.00% of 6
+No calls
+
+Function 'getCost'
+Lines executed:0.00% of 30
+Branches executed:0.00% of 28
+Taken at least once:0.00% of 28
+No calls
+
+Function 'cardEffect'
+Lines executed:0.00% of 195
+Branches executed:0.00% of 141
+Taken at least once:0.00% of 141
+No calls
+
+Function 'discardCard'
+Lines executed:0.00% of 15
+Branches executed:0.00% of 6
+Taken at least once:0.00% of 6
+No calls
+
+Function 'gainCard'
+Lines executed:0.00% of 15
+Branches executed:0.00% of 6
+Taken at least once:0.00% of 6
+No calls
+
+Function 'updateCoins'
+Lines executed:57.14% of 14
+Branches executed:50.00% of 8
+Taken at least once:37.50% of 8
+No calls
+
+Function 'actionAdventurer'
+Lines executed:0.00% of 15
+Branches executed:0.00% of 12
+Taken at least once:0.00% of 12
+No calls
+
+Function 'actionSmity'
+Lines executed:0.00% of 4
+Branches executed:0.00% of 2
+Taken at least once:0.00% of 2
+No calls
+
+Function 'actionCouncil_room'
+Lines executed:0.00% of 10
+Branches executed:0.00% of 6
+Taken at least once:0.00% of 6
+No calls
+
+Function 'actionTreasure_map'
+Lines executed:0.00% of 15
+Branches executed:0.00% of 10
+Taken at least once:0.00% of 10
+No calls
+
+Function 'actionFeast'
+Lines executed:0.00% of 19
+Branches executed:0.00% of 10
+Taken at least once:0.00% of 10
+No calls
+
+Function 'actionBaron'
+Lines executed:0.00% of 36
+Branches executed:0.00% of 18
+Taken at least once:0.00% of 18
+No calls
+
+File 'dominion.c'
+Lines executed:3.42% of 644
+Branches executed:0.96% of 417
+Taken at least once:0.72% of 417
+No calls
+dominion.c:creating 'dominion.c.gcov'
+

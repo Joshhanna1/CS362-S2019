@@ -11,8 +11,8 @@ int main(){
 	int wantedValue, value;
 
 	unitTest->whoseTurn = 0;
-	unitTest->handCount[0] = 4;
-	wantedValue = 4;
+	unitTest->handCount[0] = 3;
+	wantedValue = 2;
 	value= numHandCards(unitTest);
 
 			if(value == wantedValue){//compare expected and returned value

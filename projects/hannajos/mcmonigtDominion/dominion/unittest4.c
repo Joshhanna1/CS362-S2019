@@ -10,9 +10,9 @@
 
 int main(){
 
-	int player = 0;
+
 	struct gameState* unitTest = malloc(sizeof(struct gameState));
-	int bonus, i = 0, totalCards=0, wantedValue=0;
+	int bonus, i = 0, totalCards=0, wantedValue = 0, player = 0;
 
 
 
@@ -22,7 +22,7 @@ int main(){
 	unitTest->handCount[0] = totalCards; //4 cards
 	unitTest->coins = 0;
 	bonus = 0;
-	wantedValue = 3;
+	wantedValue = 6;
 	//go through total cards
 	for(i=0;i<totalCards;i++){
 		unitTest->hand[player][i]=copper;
@@ -38,66 +38,7 @@ int main(){
 
 
 
-	//total is 8
-	totalCards = 9 ;
-	unitTest->handCount[0] = totalCards; //4 cards
-	unitTest->coins = 0;
-	bonus = 0;
-	wantedValue = 9;
-	//go through total cards
-	for(i=0;i<totalCards;i++){
-		unitTest->hand[player][i]=copper;
-	}
-	//update the coins for the players
-	updateCoins(player, unitTest,bonus);
-	//see if the test passes or not
-	if(wantedValue==unitTest->coins){
-		printf( "TEST PASSED: Values matched. Expected value: %d   updateCoins function return total: %d\n",wantedValue,unitTest->coins);
-	}else{
-		printf( "TEST Failed: Values do not matched. Expected value: %d   updateCoins function return total: %d\n",wantedValue,unitTest->coins);
-	}
 
-
-
-	//total is 12
-	totalCards = 13 ;
-	unitTest->handCount[0] = totalCards; //4 cards
-	unitTest->coins = 0;
-	bonus = 0;
-	wantedValue = 13;
-	//go through total cards
-	for(i=0;i<totalCards;i++){
-		unitTest->hand[player][i]=copper;
-	}
-	//update the coins for the players
-	updateCoins(player, unitTest,bonus);
-	//see if the test passes or not
-	if(wantedValue==unitTest->coins){
-		printf( "TEST PASSED: Values matched. Expected value: %d   updateCoins function return total: %d\n",wantedValue,unitTest->coins);
-	}else{
-		printf( "TEST Failed: Values do not matched. Expected value: %d   updateCoins function return total: %d\n",wantedValue,unitTest->coins);
-	}
-
-
-
-	//total is 14
-	totalCards =  16;
-	unitTest->handCount[0] = totalCards; //4 cards
-	unitTest->coins = 0;
-	bonus = 0;
-	wantedValue = 16;
-	//go through total cards
-	for(i=0;i<totalCards;i++){
-		unitTest->hand[player][i]=copper;
-	}
-	//update the coins for the players
-	updateCoins(player, unitTest,bonus);
-	//see if the test passes or not
-	if(wantedValue==unitTest->coins){
-		printf( "TEST PASSED: Values matched. Expected value: %d   updateCoins function return total: %d\n",wantedValue,unitTest->coins);
-	}else{
-		printf( "TEST Failed: Values do not matched. Expected value: %d   updateCoins function return total: %d\n",wantedValue,unitTest->coins);
-	}
 
 
 free(unitTest);

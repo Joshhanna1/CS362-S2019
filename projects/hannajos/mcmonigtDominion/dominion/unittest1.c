@@ -19,9 +19,9 @@ int main(){
 
 	for(i = 0; i < MAX_PLAYERS ; i++ ){
 
+		index = whoseTurn(unitTest) + 1;// find whos turn\
 		unitTest->whoseTurn = i; //set player number in game struct
 		wantedValue = i;   //set expected player value whoseTurn should return
-		index = whoseTurn(unitTest);// find whos turn
 
 		if(index == wantedValue){//compare expected and returned value
 			printf( "TEST PASSED: Values matched. Expected value: %d   whoseTurn function return value: %d\n",wantedValue,index);
