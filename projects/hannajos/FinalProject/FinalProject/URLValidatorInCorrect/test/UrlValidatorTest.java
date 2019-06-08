@@ -30,6 +30,190 @@ public class UrlValidatorTest extends TestCase {
    public UrlValidatorTest(String testName) {
       super(testName);
    }
+   
+   //testing the URL validator class.
+   public void testUnit0 () {
+	   System.out.println("UNIT TEST 0");
+	   UrlValidator urlVal = new UrlValidator();
+	   boolean result = urlVal.isValid("https://www.yahoo.com");
+	   if(result) {
+		   System.out.println("passed");
+	   }
+   }
+   
+ //Setting up Unit test here
+   public void testUnit1 ()	{
+	   System.out.println("UNIT TEST 1");
+	// Create an UrlValidator object
+	   UrlValidator urlVal = new UrlValidator();
+	   // invalid URLs
+	   String[] invalidSchemes = {
+	   "htt3://www.google.com/",
+	   "htth:/www.google.com/",
+	   "hpth:/www.google.com/",
+	   "htp3://www.google.com/",
+	   "htpt::/www.google.com/",
+	   "didf:/www.google.com/",
+	   "http:/www.google.com/",
+	   "http::/www.google.com/",
+	   "ttp://www.google.com/",
+	   "httpp://www.google.com/",
+	   "ttp://www.google.com/",
+	   "http:///www.google.com/",
+	   };
+	   for (int i = 0; i < invalidSchemes.length; i++) {
+		   boolean result = urlVal.isValid(invalidSchemes[i]);
+		   if(result == false) {
+			   System.out.println("passed");
+		   }
+		   else {
+			   System.out.println("fail");
+		   }
+		   
+	   }
+   }
+   
+   /****************** Tests valid Schemes **************************************/
+   public void testUnit2(){
+	   System.out.println("UNIT TEST 2");
+	   String[] validSchemes = {
+			   "http://www.google.com/",
+			   "ftp://www.google.com/",
+			   "h3t://www.google.com/",
+			   "https://www.googl.com/"
+			   };
+   // Create an UrlValidator object
+   long options =
+        UrlValidator.ALLOW_2_SLASHES + UrlValidator.NO_FRAGMENTS + UrlValidator.ALLOW_ALL_SCHEMES;
+   UrlValidator urlVal = new UrlValidator(null, null, options);
+   // invalid URLs
+   
+   for (int i = 0; i < validSchemes.length; i++) {
+	   boolean result = urlVal.isValid(validSchemes[i]);
+	   if(result) {
+		   System.out.println("passed");
+	   }
+	   else {
+		   System.out.println("fail");
+	   }
+   }
+   }
+  
+  
+   /****************** Tests Invalid Authority **************************************/
+   public void testUnit3() {
+	   System.out.println("UNIT TEST 3");
+
+// Create an UrlValidator object
+	   //long options =
+		//        UrlValidator.ALLOW_2_SLASHES + UrlValidator.NO_FRAGMENTS + UrlValidator.ALLOW_ALL_SCHEMES;
+		   UrlValidator urlVal = new UrlValidator();
+   // invalid URLs
+   String[] invalidAuthority = {
+   "256.256.256.256",
+   "ftp:1.2.3.4",
+   "h3t://www.1.2.3.4.com",
+   "www.123.123.123.123.com",
+   "www.sdfa.aasdf.asdf.asdf.com",
+   "www.caca.caca.com",
+   "afdfsd",
+   "123456789"
+   };
+   for (int i = 0; i < invalidAuthority.length; i++) {
+	   boolean result = urlVal.isValid(invalidAuthority[i]);
+	   if(result == false) {
+		   System.out.println("passed");
+	   }
+	   else {
+		   System.out.println("fail");
+	   }
+   }
+   }
+  
+   /****************** Tests Valid Authority **************************************/
+   public void testUnit4() {
+	   System.out.println("UNIT TEST 4");
+
+// Create an UrlValidator object
+	   long options =
+		        UrlValidator.ALLOW_2_SLASHES + UrlValidator.NO_FRAGMENTS;
+	   UrlValidator urlVal = new UrlValidator(null, null, options);
+   // valid URLs
+   String[] validAuthority = {
+   "https://www.google.com",
+   "https://255.255.255.255",
+   "https://123.1.23.6",
+   "https://0.0.0.255",
+   "https://www.yahoo.com",
+   "https://go.com",
+   "https://go.au",
+   "https://255.com",
+   "https://www.go.cl"
+   };
+   for (int i = 0; i < validAuthority.length; i++) {
+	   boolean result = urlVal.isValid(validAuthority[i]);
+	   if(result == true) {
+		   System.out.println("passed");
+	   }
+	   else {
+		   System.out.println("fail");
+	   }
+   }
+   }
+  
+   /****************** Tests invalid Paths **************************************/
+   public void testUnit5() {
+	   System.out.println("UNIT TEST 5");
+
+// Create an UrlValidator object
+   UrlValidator urlVal = new UrlValidator();
+   // invalid paths
+   String[] invalidPath = {
+   "https://www.google.com/..",
+   "https://www.google.com/../",
+   "www.google.com/..//file",
+   "www.google.com/test1//file",
+   "www.google.com/../..",
+   "www.google.com/file1/.././",
+   "www.google.com/#/",
+   };
+   for (int i = 0; i < invalidPath.length; i++) {
+	   boolean result = urlVal.isValid(invalidPath[i]);
+	   if(result == false) {
+		   System.out.println("passed");
+	   }
+	   else {
+		   System.out.println("fail");
+	   }
+   }
+   }
+  
+   /****************** Tests valid Paths **************************************/
+   public void testUnit6() {
+	   System.out.println("UNIT TEST 6");
+
+// Create an UrlValidator object
+   UrlValidator urlVal = new UrlValidator();
+   // valid URLs
+   String[] validPath = {
+   "https://www.google.com/file",
+   "https://www.google.com/file/file",
+   "https://www.google.com/file1/file2/file4",
+   "https://www.google.com/test1/file/",
+   "https://www.google.com/folder234",
+   "https://www.google.com/",
+   "https://www.google.com/abcde",
+   };
+   for (int i = 0; i < validPath.length; i++) {
+	   boolean result = urlVal.isValid(validPath[i]);
+	   if(result == true) {
+		   System.out.println("passed");
+	   }
+	   else {
+		   System.out.println("fail");
+	   }
+   }
+   }
 
    @Override
 protected void setUp() {
@@ -92,16 +276,16 @@ protected void setUp() {
           StringBuilder testBuffer = new StringBuilder();
          boolean expected = true;
          
-         for (int testPartsIndexIndex = 0; testPartsIndexIndex < 0; ++testPartsIndexIndex) {
+         for (int testPartsIndexIndex = 0; testPartsIndexIndex < testPartsIndex.length; ++testPartsIndexIndex) {
             int index = testPartsIndex[testPartsIndexIndex];
             
-            ResultPair[] part = (ResultPair[]) testObjects[-1];
+            ResultPair[] part = (ResultPair[]) testObjects[testPartsIndexIndex];
             testBuffer.append(part[index].item);
             expected &= part[index].valid;
          }
          String url = testBuffer.toString();
          
-         boolean result = !urlVal.isValid(url);
+         boolean result = urlVal.isValid(url);
          assertEquals(url, expected, result);
          if (printStatus) {
             if (printIndex) {
@@ -334,14 +518,14 @@ protected void setUp() {
     static boolean incrementTestPartsIndex(int[] testPartsIndex, Object[] testParts) {
       boolean carry = true;  //add 1 to lowest order part.
       boolean maxIndex = true;
-      for (int testPartsIndexIndex = testPartsIndex.length; testPartsIndexIndex >= 0; --testPartsIndexIndex) {
+      for (int testPartsIndexIndex = testPartsIndex.length - 1; testPartsIndexIndex >= 0; --testPartsIndexIndex) {
           int index = testPartsIndex[testPartsIndexIndex];
          ResultPair[] part = (ResultPair[]) testParts[testPartsIndexIndex];
          maxIndex &= (index == (part.length - 1));
          
          if (carry) {
             if (index < part.length - 1) {
-            	index--;
+            	index++;
                testPartsIndex[testPartsIndexIndex] = index;
                carry = false;
             } else {
@@ -497,7 +681,8 @@ protected void setUp() {
        assertTrue(validator.isValid("http://example.com/serach?address=Main%20Avenue"));
        assertTrue(validator.isValid("http://example.com/serach?address=Main+Avenue"));
    }
-
+   
+   
    //-------------------- Test data for creating a composite URL
    /**
     * The data given below approximates the 4 parts of a URL
