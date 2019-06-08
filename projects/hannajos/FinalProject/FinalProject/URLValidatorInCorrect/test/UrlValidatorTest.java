@@ -222,7 +222,7 @@ public class UrlValidatorTest extends TestCase {
    public void testRandomScheme() {
 	   Random rand = new Random();
 	   System.out.println("Random Unit Testing");
-	   long options = UrlValidator.ALLOW_2_SLASHES + UrlValidator.ALLOW_ALL_SCHEMES + UrlValidator.NO_FRAGMENTS;
+	   long options = UrlValidator.ALLOW_2_SLASHES + UrlValidator.NO_FRAGMENTS;
 	   UrlValidator UrlVal = new UrlValidator(options);
 
 	   String testURL;
@@ -250,6 +250,7 @@ public class UrlValidatorTest extends TestCase {
 		   }
 		   else {
 			   System.out.println("SYSTEM FAILS TEST");
+			   System.exit(0);
 
 		   }
 		   System.out.println();
@@ -343,7 +344,7 @@ public class UrlValidatorTest extends TestCase {
    public void testRandomPath() {
 	   Random rand = new Random();
 	   System.out.println("Random Unit Testing");
-	   long options = UrlValidator.ALLOW_2_SLASHES + UrlValidator.ALLOW_ALL_SCHEMES + UrlValidator.NO_FRAGMENTS;
+	   long options = UrlValidator.ALLOW_ALL_SCHEMES + UrlValidator.NO_FRAGMENTS;
 	   UrlValidator UrlVal = new UrlValidator(options);
 
 	   String testURL;
@@ -943,7 +944,7 @@ protected void setUp() {
     */
    ResultPair[] testUrlScheme = {new ResultPair("http://", true),
                                new ResultPair("ftp://", true),
-                               new ResultPair("h3t://", true),
+                               new ResultPair("h3t://", false),
                                new ResultPair("3ht://", false),
                                new ResultPair("http:/", false),
                                new ResultPair("http:", false),
