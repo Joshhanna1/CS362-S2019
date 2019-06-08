@@ -16,7 +16,7 @@
  */
 
 import junit.framework.TestCase;
-import java.util.Random; 
+import java.util.Random;
 
 
 /**
@@ -32,7 +32,7 @@ public class UrlValidatorTest extends TestCase {
    public UrlValidatorTest(String testName) {
       super(testName);
    }
-   
+
    //testing the URL validator class.
    public void testUnit0 () {
 	   System.out.println("UNIT TEST 0");
@@ -42,7 +42,7 @@ public class UrlValidatorTest extends TestCase {
 		   System.out.println("passed");
 	   }
    }
-   
+
  //Setting up Unit test here
    public void testUnit1 ()	{
 	   System.out.println("UNIT TEST 1");
@@ -71,10 +71,10 @@ public class UrlValidatorTest extends TestCase {
 		   else {
 			   System.out.println("fail");
 		   }
-		   
+
 	   }
    }
-   
+
    /****************** Tests valid Schemes **************************************/
    public void testUnit2(){
 	   System.out.println("UNIT TEST 2");
@@ -89,7 +89,7 @@ public class UrlValidatorTest extends TestCase {
         UrlValidator.ALLOW_2_SLASHES + UrlValidator.NO_FRAGMENTS + UrlValidator.ALLOW_ALL_SCHEMES;
    UrlValidator urlVal = new UrlValidator(null, null, options);
    // invalid URLs
-   
+
    for (int i = 0; i < validSchemes.length; i++) {
 	   boolean result = urlVal.isValid(validSchemes[i]);
 	   if(result) {
@@ -100,8 +100,8 @@ public class UrlValidatorTest extends TestCase {
 	   }
    }
    }
-  
-  
+
+
    /****************** Tests Invalid Authority **************************************/
    public void testUnit3() {
 	   System.out.println("UNIT TEST 3");
@@ -131,7 +131,7 @@ public class UrlValidatorTest extends TestCase {
 	   }
    }
    }
-  
+
    /****************** Tests Valid Authority **************************************/
    public void testUnit4() {
 	   System.out.println("UNIT TEST 4");
@@ -162,7 +162,7 @@ public class UrlValidatorTest extends TestCase {
 	   }
    }
    }
-  
+
    /****************** Tests invalid Paths **************************************/
    public void testUnit5() {
 	   System.out.println("UNIT TEST 5");
@@ -189,7 +189,7 @@ public class UrlValidatorTest extends TestCase {
 	   }
    }
    }
-  
+
    /****************** Tests valid Paths **************************************/
    public void testUnit6() {
 	   System.out.println("UNIT TEST 6");
@@ -216,15 +216,15 @@ public class UrlValidatorTest extends TestCase {
 	   }
    }
    }
-   
-   
+
+
    /****************** Random Unit Scheme Test **************************************/
    public void testRandomScheme() {
-	   Random rand = new Random(); 
+	   Random rand = new Random();
 	   System.out.println("Random Unit Testing");
 	   long options = UrlValidator.ALLOW_2_SLASHES + UrlValidator.ALLOW_ALL_SCHEMES + UrlValidator.NO_FRAGMENTS;
 	   UrlValidator UrlVal = new UrlValidator(options);
-	   
+
 	   String testURL;
 	   int scheme, authority, port, path, query;
 	   for(int i = 0; i < 1000; i++) {
@@ -233,13 +233,13 @@ public class UrlValidatorTest extends TestCase {
 //		   port = rand.nextInt(9);
 //		   path = rand.nextInt(10);
 //		   query = rand.nextInt(3);
-		   
+
 		   testURL = testUrlScheme[scheme].item+
 				   		testUrlAuthority[0].item+
 				   		testUrlPort[0].item+
 				   		testPath[0].item+
 				   		testUrlQuery[0].item;
-		   
+
 		   System.out.println("Scheme being tested:" + testUrlScheme[scheme].item);
 		   System.out.println("FULL URL being tested:" + testURL);
 		   boolean testScheme = UrlVal.isValid(testURL);
@@ -257,14 +257,14 @@ public class UrlValidatorTest extends TestCase {
 
 	   }
    }
-   
+
    /****************** Random Unit authority Test **************************************/
    public void testRandomAuthority() {
-	   Random rand = new Random(); 
+	   Random rand = new Random();
 	   System.out.println("Random Unit Testing");
 	   long options = UrlValidator.ALLOW_2_SLASHES + UrlValidator.ALLOW_ALL_SCHEMES + UrlValidator.NO_FRAGMENTS;
 	   UrlValidator UrlVal = new UrlValidator(options);
-	   
+
 	   String testURL;
 	   int scheme, authority, port, path, query;
 	   for(int i = 0; i < 1000; i++) {
@@ -273,13 +273,13 @@ public class UrlValidatorTest extends TestCase {
 //		   port = rand.nextInt(9);
 //		   path = rand.nextInt(10);
 //		   query = rand.nextInt(3);
-		   
+
 		   testURL = testUrlScheme[0].item+
 				   		testUrlAuthority[authority].item+
 				   		testUrlPort[0].item+
 				   		testPath[0].item+
 				   		testUrlQuery[0].item;
-		   
+
 		   System.out.println("Authority being tested:" + testUrlAuthority[authority].item);
 		   System.out.println("FULL URL being tested:" + testURL);
 		   boolean testAuthority = UrlVal.isValid(testURL);
@@ -297,14 +297,14 @@ public class UrlValidatorTest extends TestCase {
 
 	   }
    }
-   
+
    /****************** Random Unit Port Test **************************************/
    public void testRandomPort() {
-	   Random rand = new Random(); 
+	   Random rand = new Random();
 	   System.out.println("Random Unit Testing");
 	   long options = UrlValidator.ALLOW_2_SLASHES + UrlValidator.ALLOW_ALL_SCHEMES + UrlValidator.NO_FRAGMENTS;
 	   UrlValidator UrlVal = new UrlValidator(options);
-	   
+
 	   String testURL;
 	   int scheme, authority, port, path, query;
 	   for(int i = 0; i < 1000; i++) {
@@ -313,13 +313,13 @@ public class UrlValidatorTest extends TestCase {
 		   port = rand.nextInt(9);
 //		   path = rand.nextInt(10);
 //		   query = rand.nextInt(3);
-		   
+
 		   testURL = testUrlScheme[0].item+
 				   		testUrlAuthority[0].item+
 				   		testUrlPort[port].item+
 				   		testPath[0].item+
 				   		testUrlQuery[0].item;
-		   
+
 		   System.out.println("Port being tested:" + testUrlPort[port].item);
 		   System.out.println("FULL URL being tested:" + testURL);
 		   boolean testPort = UrlVal.isValid(testURL);
@@ -338,14 +338,14 @@ public class UrlValidatorTest extends TestCase {
 
 	   }
    }
-   
+
    /****************** Random Unit Path Test **************************************/
    public void testRandomPath() {
-	   Random rand = new Random(); 
+	   Random rand = new Random();
 	   System.out.println("Random Unit Testing");
 	   long options = UrlValidator.ALLOW_2_SLASHES + UrlValidator.ALLOW_ALL_SCHEMES + UrlValidator.NO_FRAGMENTS;
 	   UrlValidator UrlVal = new UrlValidator(options);
-	   
+
 	   String testURL;
 	   int scheme, authority, port, path, query;
 	   for(int i = 0; i < 1000; i++) {
@@ -354,20 +354,20 @@ public class UrlValidatorTest extends TestCase {
 		   port = rand.nextInt(9);
 		   path = rand.nextInt(10);
 		   query = rand.nextInt(3);
-		   
+
 		   testURL = testUrlScheme[0].item+
 				   		testUrlAuthority[0].item+
 				   		testUrlPort[0].item+
 				   		testPath[path].item+
 				   		testUrlQuery[0].item;
-		   
+
 		   System.out.println("Path being tested:" + testPath[path].item);
 		   System.out.println("FULL URL being tested:" + testURL);
 		   boolean testPathResults = UrlVal.isValid(testURL);
 		   System.out.println("Expected: "+ testPath[path].valid);
 		   System.out.println("Result: "+testPathResults);
 		   //assertTrue(testPath[path].valid == testPathResults);
-		   if(testPath[path].valid == testPathResults) { 
+		   if(testPath[path].valid == testPathResults) {
 			   System.out.println("SYSTEM PASSES TEST");
 		   }
 		   else {
@@ -380,14 +380,14 @@ public class UrlValidatorTest extends TestCase {
 
 	   }
    }
-   
+
    /****************** Random Unit Query Test **************************************/
    public void testRandomQuery() {
-	   Random rand = new Random(); 
+	   Random rand = new Random();
 	   System.out.println("Random Unit Testing");
 	   long options = UrlValidator.ALLOW_2_SLASHES + UrlValidator.ALLOW_ALL_SCHEMES + UrlValidator.NO_FRAGMENTS;
 	   UrlValidator UrlVal = new UrlValidator(options);
-	   
+
 	   boolean flag = true;
 	   String testURL;
 	   int scheme, authority, port, path, query;
@@ -397,14 +397,14 @@ public class UrlValidatorTest extends TestCase {
 //		   port = rand.nextInt(9);
 //		   path = rand.nextInt(10);
 		   query = rand.nextInt(3);
-		   
+
 		   testURL = testUrlScheme[0].item+
 				   		testUrlAuthority[0].item+
 				   		testUrlPort[0].item+
 				   		testPath[query].item+
 				   		testUrlQuery[query].item;
-		   
-		   
+
+
 		   System.out.println("Query being tested:" + testUrlQuery[query].item);
 		   System.out.println("FULL URL being tested:" + testURL);
 		   boolean testQuery = UrlVal.isValid(testURL);
@@ -415,7 +415,7 @@ public class UrlValidatorTest extends TestCase {
 		   }
 		   else {
 			   System.out.println("SYSTEM FAILS TEST");
-			   
+
 
 		   }
 		   System.out.println();
@@ -423,14 +423,14 @@ public class UrlValidatorTest extends TestCase {
 
 	   }
    }
-   
+
    /****************** Random Unit Whole URL Test **************************************/
    public void testRandomURL() {
-	   Random rand = new Random(); 
+	   Random rand = new Random();
 	   System.out.println("Random Unit Testing");
 	   long options = UrlValidator.ALLOW_2_SLASHES + UrlValidator.ALLOW_ALL_SCHEMES + UrlValidator.NO_FRAGMENTS;
 	   UrlValidator UrlVal = new UrlValidator(options);
-	   
+
 	   String testURL;
 	   int scheme, authority, port, path, query;
 	   for(int i = 0; i < 1000; i++) {
@@ -439,13 +439,13 @@ public class UrlValidatorTest extends TestCase {
 		   port = rand.nextInt(9);
 		   path = rand.nextInt(10);
 		   query = rand.nextInt(3);
-		   
+
 		   testURL = testUrlScheme[scheme].item+
 				   		testUrlAuthority[authority].item+
 				   		testUrlPort[port].item+
 				   		testPath[path].item+
 				   		testUrlQuery[query].item;
-		   
+
 		   System.out.println("FULL URL being tested:" + testURL);
 		   boolean testUrl = UrlVal.isValid(testURL);
 		   if(testUrl == true) {
@@ -453,7 +453,7 @@ public class UrlValidatorTest extends TestCase {
 		   }
 		   else {
 			   System.out.println("SYSTEM FAILS TEST");
-			   
+
 
 		   }
 		   System.out.println();
@@ -461,9 +461,9 @@ public class UrlValidatorTest extends TestCase {
 
 	   }
    }
-   
-   
-   
+
+
+
    @Override
 protected void setUp() {
       for (int index = 0; index < testPartsIndex.length - 1; index++) {
@@ -524,16 +524,16 @@ protected void setUp() {
       do {
           StringBuilder testBuffer = new StringBuilder();
          boolean expected = true;
-         
+
          for (int testPartsIndexIndex = 0; testPartsIndexIndex < testPartsIndex.length; ++testPartsIndexIndex) {
             int index = testPartsIndex[testPartsIndexIndex];
-            
+
             ResultPair[] part = (ResultPair[]) testObjects[testPartsIndexIndex];
             testBuffer.append(part[index].item);
             expected &= part[index].valid;
          }
          String url = testBuffer.toString();
-         
+
          boolean result = urlVal.isValid(url);
          assertEquals(url, expected, result);
          if (printStatus) {
@@ -771,7 +771,7 @@ protected void setUp() {
           int index = testPartsIndex[testPartsIndexIndex];
          ResultPair[] part = (ResultPair[]) testParts[testPartsIndexIndex];
          maxIndex &= (index == (part.length - 1));
-         
+
          if (carry) {
             if (index < part.length - 1) {
             	index++;
@@ -783,7 +783,7 @@ protected void setUp() {
             }
          }
       }
-      
+
       return (!maxIndex);
    }
 
@@ -930,8 +930,8 @@ protected void setUp() {
        assertTrue(validator.isValid("http://example.com/serach?address=Main%20Avenue"));
        assertTrue(validator.isValid("http://example.com/serach?address=Main+Avenue"));
    }
-   
-   
+
+
    //-------------------- Test data for creating a composite URL
    /**
     * The data given below approximates the 4 parts of a URL
